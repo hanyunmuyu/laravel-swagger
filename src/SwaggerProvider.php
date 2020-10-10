@@ -4,7 +4,7 @@
  * Time: 16:35
  */
 
-namespace Swagger;
+namespace Hanyun\Swagger;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -35,7 +35,7 @@ class SwaggerProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('demo', function ($app) {
-            return new Demo();
+            return new Swagger();
         });
     }
 }
