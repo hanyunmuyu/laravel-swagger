@@ -1,0 +1,17 @@
+{
+    "name": "laravel/swagger",
+    "description": "Swagger for laravel",
+    "keywords": [
+        "swagger",
+        "laravel",
+        "openapi"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hanyun",
+            "email": "1355081829@qq.com"
+        }
+    ],
+    "require": {}
+}
