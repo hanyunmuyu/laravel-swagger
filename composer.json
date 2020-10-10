@@ -1,5 +1,5 @@
 {
-    "name": "laravel-swagger",
+    "name": "lara/swagger",
     "description": "Swagger for laravel",
     "keywords": [
         "swagger",
