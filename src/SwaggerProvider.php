@@ -8,7 +8,7 @@ namespace Swagger;
 
 use Illuminate\Support\ServiceProvider;
 
-class Swagger extends ServiceProvider
+class SwaggerProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
