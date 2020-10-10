@@ -13,5 +13,12 @@
             "email": "1355081829@qq.com"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "Swagger\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.3"
+    }
 }

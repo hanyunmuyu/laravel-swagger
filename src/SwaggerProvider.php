@@ -4,7 +4,7 @@
  * Time: 16:35
  */
 
-namespace Hanyun\Swagger;
+namespace Swagger;
 
 use Illuminate\Support\ServiceProvider;
 
