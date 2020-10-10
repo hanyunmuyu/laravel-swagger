@@ -4,11 +4,11 @@
  * Time: 16:35
  */
 
-namespace laravel\swagger;
+namespace Swagger;
 
 use Illuminate\Support\ServiceProvider;
 
-class DemoProvider extends ServiceProvider
+class Swagger extends ServiceProvider
 {
     /**
      * Bootstrap the application services.

@@ -4,14 +4,14 @@
  * Time: 16:39
  */
 
-namespace laravel\swagger\Facades;
+namespace Swagger\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class Demo extends Facade
+class Swagger extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'demo';
+        return 'swagger';
     }
 }
