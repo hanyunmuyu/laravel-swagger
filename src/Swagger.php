@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Swagger;
+namespace Hanyun\Swagger;
 
 
 class Swagger

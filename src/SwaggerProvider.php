@@ -4,7 +4,7 @@
  * Time: 16:35
  */
 
-namespace Swagger;
+namespace Hanyun\Swagger;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -25,6 +25,7 @@ class SwaggerProvider extends ServiceProvider
             __DIR__ . '/view' => resource_path('views/swagger-ui'),
             __DIR__ . '/Commands/Swagger.php' => app_path('Console/Commands/Swagger.php'),
         ]);
+        include_once __DIR__ . '/routes/swagger.php';
     }
 
     /**
@@ -34,7 +35,7 @@ class SwaggerProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('demo', function ($app) {
+        $this->app->singleton('swagger', function ($app) {
             return new Swagger();
         });
     }

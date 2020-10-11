@@ -15,10 +15,11 @@
     ],
     "autoload": {
         "psr-4": {
-            "Swagger\\": "src/"
+            "Hanyun\\Swagger\\": "src/"
         }
     },
     "require": {
-        "php": "^7.3"
+        "php": "^7.3",
+        "zircote/swagger-php": "^3.1"
     }
 }

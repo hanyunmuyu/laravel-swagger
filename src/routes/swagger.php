@@ -6,4 +6,4 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/swagger', [\laravel\swagger\Controllers\SwaggerController::class, 'index']);
+Route::get('/swagger', [\Hanyun\Swagger\Controllers\SwaggerController::class, 'index']);

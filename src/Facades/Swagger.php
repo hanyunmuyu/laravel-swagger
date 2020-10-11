@@ -4,7 +4,7 @@
  * Time: 16:39
  */
 
-namespace Swagger\Facades;
+namespace Hanyun\Swagger\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

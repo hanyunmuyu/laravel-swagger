@@ -1,6 +1,6 @@
 <?php
 
-namespace laravel\swagger\Controllers;
+namespace Hanyun\Swagger\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
