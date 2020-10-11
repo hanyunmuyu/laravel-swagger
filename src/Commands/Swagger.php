@@ -44,6 +44,10 @@ class Swagger extends Command
         $json = preg_replace('/\s{0,}\*\s{0,}#\s{0,}/', '# ', $json);
         $json = preg_replace('/\s{0,}\\\\r\\\\n\s{0,}/', '\n', $json);
         $json = preg_replace('/\s{0,}\*\s{0,}/', '', $json);
+        $arr = json_decode($json, true);
+        $arr['info'] = config('swagger.info');
+        $arr['servers'] = config('swagger.servers');
+        $json = json_encode($arr);
         file_put_contents(public_path('swagger-ui/swagger.json'), $json);
         return 0;
     }
