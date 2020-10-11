@@ -1,5 +1,7 @@
 基于` zircote/swagger-php ` 和 ` swagger-ui ` 二次开发的自动生成OpenAPI文档的laravel扩展包
  
+> [github地址](https://github.com/hanyunmuyu/laravel-swagger) 欢迎大家star和fork
+ 
  1.在laravel项目根目录执行 `composer require hanyun/swagger`
  
  2.项目的/config/app.php 的providers数组里面添加 ` \Hanyun\Swagger\SwaggerProvider::class `
@@ -116,8 +118,12 @@ class Controller extends BaseController
 
 ```
 
-6.在项目根目录执行 ` php artisan swagger:generate `，生成API
+6.修改 ` config/swagger.php ` 这个会自动覆盖swagger的默认配置信息
 
-7.项目根目录执行 `  php artisan serve `，打开 [项目文档](http://127.0.0.1:8000/swagger)
+7.在项目根目录执行 ` php artisan swagger:generate `，生成API
+
+8.项目根目录执行 `  php artisan serve `，打开 [项目文档](http://127.0.0.1:8000/swagger)
 
 具体的[swagger文档](https://swagger.io/) ，[zircote/swagger-php文档](https://github.com/zircote/swagger-php)
+
+> [github地址](https://github.com/hanyunmuyu/laravel-swagger) 欢迎大家star和fork
