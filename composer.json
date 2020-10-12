@@ -1,6 +1,6 @@
 {
     "name": "hanyun/swagger",
-    "description": "Swagger for laravel",
+    "description": "Autogenerate OpenAPI for laravel with Swagger-UI",
     "keywords": [
         "swagger",
         "laravel",

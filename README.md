@@ -2,33 +2,27 @@
  
 > [github地址](https://github.com/hanyunmuyu/laravel-swagger) 欢迎大家star和fork
  
- 1.在laravel项目根目录执行 `composer require hanyun/swagger`
+ 1、在laravel项目根目录执行 `composer require hanyun/swagger`
  
- 2.项目的/config/app.php 的providers数组里面添加 ` \Hanyun\Swagger\SwaggerProvider::class `
-    如下所示
-    
-    ```
-        'providers' => [
-            //...其他的依赖
-            \Hanyun\Swagger\SwaggerProvider::class
-        ],
+ 2、执行 ` php artisan storage:link ` 发布静态资源
+ 
+ 3、执行 ` php artisan vendor:publish ` 发布扩展包的依赖文件
+ 
+ ```
 
-    ```
- 
- 3.项目的/config/app.php 的aliases数组里面添加 ` 'swagger'=>\Hanyun\Swagger\Facades\Swagger::class `
-    如下所示
-    
-```
-    'aliases' => [
-        //...   其他的省略
-        'swagger'=>\Hanyun\Swagger\Facades\Swagger::class
-    ],
+  [11] Tag: flare-config
+  [12] Tag: ignition-config
+  [13] Tag: laravel-errors
+  [14] Tag: laravel-mail
+  [15] Tag: laravel-notifications
+  [16] Tag: laravel-pagination
+  [17] Tag: swagger //这一行是我们的扩展包
 
 ```
 
-4.在项目根目录执行 `  php artisan vendor:publish ` , 找到 ` [4 ] Provider: Hanyun\Swagger\SwaggerProvider ` 这一行，输入前面的数字，按回车
+输入 17 然后回车，应用我们的扩展包
 
-5.执行 ` php artian make:controller Api/v1/IndexController ` 生成控制器，修改代码
+4、执行 ` php artian make:controller Api/v1/IndexController ` 生成控制器，修改代码
 
 ``` php
 
@@ -118,11 +112,11 @@ class Controller extends BaseController
 
 ```
 
-6.修改 ` config/swagger.php ` 这个会自动覆盖swagger的默认配置信息
+5、修改 ` config/swagger.php ` 这个会自动覆盖swagger的默认配置信息
 
-7.在项目根目录执行 ` php artisan swagger:generate `，生成API
+6、在项目根目录执行 ` php artisan swagger:generate `，生成API
 
-8.项目根目录执行 `  php artisan serve `，打开 [项目文档](http://127.0.0.1:8000/swagger)
+7、项目根目录执行 `  php artisan serve `，打开 [项目文档](http://127.0.0.1:8000/swagger)
 
 具体的[swagger文档](https://swagger.io/) ，[zircote/swagger-php文档](https://github.com/zircote/swagger-php)
 
