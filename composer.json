@@ -21,5 +21,15 @@
     "require": {
         "php": "^7.3",
         "zircote/swagger-php": "^3.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hanyun\\Swagger\\SwaggerProvider"
+            ],
+            "aliases": {
+                "Swagger": "Hanyun\\Swagger\\Facades\\Swagger"
+            }
+        }
     }
 }
