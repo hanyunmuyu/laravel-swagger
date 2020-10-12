@@ -1,12 +1,12 @@
 {
-    "name": "hanyun/swagger",
+    "name": "hanyun/laravel-swagger",
     "description": "Autogenerate OpenAPI for laravel with Swagger-UI",
     "keywords": [
         "swagger",
         "laravel",
         "openapi"
     ],
-    "license": "MIT",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "hanyun",
