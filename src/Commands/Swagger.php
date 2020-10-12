@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Hanyun\Swagger\Commands;
 
 use Illuminate\Console\Command;
 
@@ -48,7 +48,7 @@ class Swagger extends Command
         $arr['info'] = config('swagger.info');
         $arr['servers'] = config('swagger.servers');
         $json = json_encode($arr);
-        file_put_contents(public_path('swagger-ui/swagger.json'), $json);
+        file_put_contents(storage_path('app/public/swagger-ui/swagger.json'), $json);
         return 0;
     }
 }

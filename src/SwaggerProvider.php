@@ -18,14 +18,27 @@ class SwaggerProvider extends ServiceProvider
     public function boot()
     {
         // 发布配置文件
+        // php artisan vendor:publish --tag=swagger
         $this->publishes([
             __DIR__ . '/config/swagger.php' => config_path('swagger.php'),
-//            __DIR__ . '/routes/swagger.php' => base_path('routes/swagger.php'),
-            __DIR__ . '/swagger-ui/dist' => public_path('swagger-ui'),
-            __DIR__ . '/view' => resource_path('views/swagger-ui'),
-            __DIR__ . '/Commands/Swagger.php' => app_path('Console/Commands/Swagger.php'),
-        ]);
-        $this->loadRoutesFrom(__DIR__.'/routes/swagger.php');
+            __DIR__ . '/swagger-ui/dist' => storage_path('app/public/swagger-ui'),
+        ], 'swagger');
+
+        // 加载视图，自定义视图的命名空间
+        $this->loadViewsFrom(__DIR__ . '/view', 'hanyun');
+
+        //加载自定义扩展路由
+        $this->loadRoutesFrom(__DIR__ . '/routes/swagger.php');
+
+        //加载自定义的console命令
+        // php artisan swagger:generate
+        if ($this->app->runningInConsole()) {
+            $this->commands(
+                [
+                    \Hanyun\Swagger\Commands\Swagger::class,
+                ]
+            );
+        }
     }
 
     /**
@@ -38,6 +51,8 @@ class SwaggerProvider extends ServiceProvider
         $this->app->singleton('swagger', function ($app) {
             return new Swagger();
         });
-        $this->mergeConfigFrom(__DIR__.'/config/swagger.php','swagger');
+
+        //覆盖默认配置
+        $this->mergeConfigFrom(__DIR__ . '/config/swagger.php', 'swagger');
     }
 }
