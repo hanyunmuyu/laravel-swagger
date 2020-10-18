@@ -40,9 +40,7 @@ class IndexController extends Controller
     /**
      * @OA\Get(
      *     path="/api/index",
-     *   security={{
-     *     "api_key":{}
-     *   }},
+     *      security={{"bearerAuth":{}}},
      *     @OA\Response(response="200", description="
      *      |参数|说明|备注||||
      *      |:---:|:---:|:---:|-----|-----|-----|
@@ -99,10 +97,12 @@ use OpenApi\Annotations as OA;
  *     )
  * )
  * @OA\SecurityScheme(
- *   securityScheme="api_key",
- *   type="apiKey",
- *   in="header",
- *   name="Authorization"
+ *      securityScheme="bearerAuth",
+ *      in="header",
+ *      name="Authorization",
+ *      type="http",
+ *      scheme="Bearer",
+ *      bearerFormat="JWT",
  * )
  */
 class Controller extends BaseController
@@ -118,6 +118,14 @@ class Controller extends BaseController
 
 7、项目根目录执行 `  php artisan serve `，打开 [项目文档](http://127.0.0.1:8000/swagger)
 
+8、jwt认证
+
+```
+
+curl -X GET "http://127.0.0.1:8000/api/index" -H  "accept: */*" -H  "Authorization: Bearer 111"
+
+```
+![运行示例](img.png)
 具体的[swagger文档](https://swagger.io/) ，[zircote/swagger-php文档](https://github.com/zircote/swagger-php)
 
 > [github地址](https://github.com/hanyunmuyu/laravel-swagger) 欢迎大家star和fork
